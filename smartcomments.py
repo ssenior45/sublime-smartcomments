@@ -52,9 +52,9 @@ class SmartCommentsFileCommand(sublime_plugin.TextCommand):
         if not file_name or not str(file_name).endswith("js"):
             return
 
-        result = fn_execute([get_command(), "-g", "-t", file_name])
+        result = fn_execute([get_command(), "-g", "-t", file_name, "-c", "/usr/lib/node_modules/smartcomments"])
         print(result)
-
+        self.view.run_command('revert')
 
 class SmartCommentsTextCommand(sublime_plugin.TextCommand):
     """
