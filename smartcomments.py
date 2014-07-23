@@ -34,7 +34,7 @@ def fn_execute(cmd_args=[], cmd=None):
 class SmartCommentsFolderCommand(sublime_plugin.TextCommand):
     """
     """
-    def run(self, edit):
+    def run_(self, edit):
         file_name = self.view.file_name()
         if not file_name:
             return
@@ -47,7 +47,7 @@ class SmartCommentsFolderCommand(sublime_plugin.TextCommand):
 class SmartCommentsFileCommand(sublime_plugin.TextCommand):
     """
     """
-    def run(self, edit):
+    def run_(self, edit):
         file_name = self.view.file_name()
         if not file_name or not str(file_name).endswith("js"):
             return
@@ -59,7 +59,7 @@ class SmartCommentsFileCommand(sublime_plugin.TextCommand):
 class SmartCommentsTextCommand(sublime_plugin.TextCommand):
     """
     """
-    def run(self, edit):
+    def run_(self, edit):
         file_name = self.view.file_name()
         if not file_name or not str(file_name).endswith("js"):
             return
